@@ -15,7 +15,7 @@ public class Server {
 	static int port = 4320;
 	static int backlog = 3;
 	static String filename = "";
-	static String path = "files/";
+	static String path = "server_files/";
 	static File file;
 	static byte[] buffer;
 

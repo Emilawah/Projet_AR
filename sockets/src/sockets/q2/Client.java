@@ -13,7 +13,7 @@ public class Client {
 
 	static String serverHost = "localhost";
 	static int serverPort = 4320;
-	static String filename = "style.css";
+	static String filename = "background.jpg";
 	static String status;
 	static byte[] buffer;
 
@@ -35,7 +35,7 @@ public class Client {
 		
 		if (status.equals("File found !")) {
 
-			FileOutputStream fos = new FileOutputStream(new File(filename));
+			FileOutputStream fos = new FileOutputStream(new File("client_files/"+filename));
 			
 			int nb;
 			nb = dis.read(buffer);

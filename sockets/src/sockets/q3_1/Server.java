@@ -25,38 +25,8 @@ public class Server {
 
 		while (true) {
 			Socket soc = listensoc.accept();
-
-			InputStream is = soc.getInputStream();
-			DataInputStream dis = new DataInputStream(is);
-			
-			
-			filename = dis.readUTF();
-			file = new File(path + filename);
-			buffer = new byte[1000];
-
-			OutputStream os = soc.getOutputStream();
-			DataOutputStream dos = new DataOutputStream(os);
-
-			if (file.exists()) {
-
-				dos.writeUTF("File found !");
-
-				FileInputStream fis = new FileInputStream(file);
-				int nb;
-				nb = fis.read(buffer);
-
-				while (nb != -1) {
-					dos.write(buffer, 0, nb);
-					nb = fis.read(buffer);
-				}
-
-				dos.flush();
-				fis.close();
-			} else {
-
-				dos.writeUTF("File \"" + filename + "\" not found !");
-			}
-			soc.close();
+			Thread worker = new Thread(new Worker(soc));
+			worker.start();
 		}
 	}
 
