@@ -10,46 +10,27 @@ import java.io.OutputStream;
 import java.net.*;
 
 public class Client {
+    static String serverHost = "localhost";
+    static int serverPort = 4320;
 
-	static String serverHost = "localhost";
-	static int serverPort = 4320;
-	static String filename = "background.jpg";
-	static String status;
-	static byte[] buffer;
+    public static void main(String[] args) throws IOException {
+        String fileName = "index.html";
+        
+        try (Socket soc = new Socket(serverHost, serverPort);
+             DataOutputStream dos = new DataOutputStream(soc.getOutputStream());
+             DataInputStream dis = new DataInputStream(soc.getInputStream())) {
+            
+            dos.writeUTF(fileName);
+            File file = new File("client_files/" + fileName);
 
-	public static void main(String[] args) throws IOException {
-
-		Socket soc = new Socket(serverHost, serverPort);
-
-		OutputStream os = soc.getOutputStream();
-		DataOutputStream dos = new DataOutputStream(os);
-
-		dos.writeUTF(filename.toString());
-
-		InputStream is = soc.getInputStream();
-		DataInputStream dis = new DataInputStream(is);
-
-		buffer = new byte[1000];
-		status = dis.readUTF();
-		System.out.println(status);
-		
-		if (status.equals("File found !")) {
-
-			FileOutputStream fos = new FileOutputStream(new File("client_files/"+filename));
-			
-			int nb;
-			nb = dis.read(buffer);
-			
-			while (nb != -1) {
-				fos.write(buffer, 0, nb);
-				nb = dis.read(buffer);
-			}
-			
-			fos.close();
-			System.out.println("Download finished");
-		}
-
-		soc.close();
-
-	}
+            try (FileOutputStream fos = new FileOutputStream(file)) {
+                byte[] buffer = new byte[1000];
+                int nb;
+                while ((nb = dis.read(buffer)) != -1) {
+                    fos.write(buffer, 0, nb);
+                }
+                System.out.println("File downloaded !");
+            }
+        }
+    }
 }
