@@ -11,44 +11,42 @@ public class ReaderAutomata {
 	};
 
 	private State state = State.READING_LENGTH;
-	private ByteBuffer bb;
+	private ByteBuffer bb = ByteBuffer.allocate(4);
 	private byte[] data;
 
 	public byte[] handleRead(SocketChannel sc) throws IOException {
 
 		if (state == State.READING_LENGTH) {
-			
-			//on alloue le buffer à 4 octets pour lire la taille du message
-			bb = ByteBuffer.allocate(4);
+
+			// on alloue le buffer à 4 octets pour lire la taille du message
 			sc.read(bb);
-			if(bb.hasRemaining()) {
+			if (bb.hasRemaining()) {
 				return null;
 			}
-			
+
 			bb.rewind();
-			
+			// if the four bytes composing the length have been read
+			// allocate a buffer to read the msg
 			int length = bb.getInt();
 			bb = ByteBuffer.allocate(length);
-			// if the four bytes composing the length have been read
-				//allocate a buffer to read the msg
-	
 			state = State.READING_MSG;
-			
-			
-		} else if (state == State.READING_MSG) {
+
+		}
+
+		if (state == State.READING_MSG) {
 			sc.read(bb);
-			if(bb.hasRemaining()) {
+			if (bb.hasRemaining()) {
 				return null;
 			}
-			
-			//on set la position à 0 pour lire les octets au debut.
+
+			// on set la position à 0 pour lire les octets au debut.
 			bb.rewind();
 			data = new byte[bb.limit()];
 			bb.get(data);
 			state = State.READING_LENGTH;
-			bb=null;
+			bb = ByteBuffer.allocate(4);
 			return data;
-			
+
 		}
 		return null;
 	}
