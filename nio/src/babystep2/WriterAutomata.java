@@ -41,6 +41,7 @@ public class WriterAutomata {
 			if (bb.hasRemaining()) {
 				return;
 			}
+			System.out.println("WA : Length sent");
 			state = State.WRITING_MSG;
 
 		}

@@ -14,16 +14,14 @@ import java.security.MessageDigest;
 import java.util.Iterator;
 
 /**
- * NIO elementary client 
- * Implements an overly simplified echo client system
- * Polytech/Info4/AR 
- * Author: F. Boyer, O. Gruber
+ * NIO elementary client Implements an overly simplified echo client system
+ * Polytech/Info4/AR Author: F. Boyer, O. Gruber
  */
 
 public class NioClient {
 	private static final int INBUF_SZ = 2048;
 
-	// The client channel to communicate with the server 
+	// The client channel to communicate with the server
 	private SocketChannel sc;
 
 	// The selection key to register events of interests on the channel
@@ -37,7 +35,7 @@ public class NioClient {
 	ByteBuffer inBuffer;
 
 	// The message to send to the server
-	byte[] first;  
+	byte[] first;
 	// The checksum of the last message sent to the server
 	// Used to check if the received message is the same than the sent one
 	byte[] digest;
@@ -48,8 +46,8 @@ public class NioClient {
 	 * NIO client initialization
 	 * 
 	 * @param serverName: the server name
-	 * @param port: the server port
-	 * @param payload: the message to send to the server
+	 * @param port:       the server port
+	 * @param payload:    the message to send to the server
 	 * @throws IOException
 	 */
 	public NioClient(String serverName, int port, byte[] payload) throws IOException {
@@ -63,7 +61,7 @@ public class NioClient {
 		sc = SocketChannel.open();
 		sc.configureBlocking(false);
 
-		// register a CONNECT interest for channel sc 
+		// register a CONNECT interest for channel sc
 		skey = sc.register(selector, SelectionKey.OP_CONNECT);
 
 		// request to connect to the server
@@ -73,7 +71,7 @@ public class NioClient {
 	}
 
 	/**
-	 * The client forever-loops on the NIO selector - waiting for events on 
+	 * The client forever-loops on the NIO selector - waiting for events on
 	 * registered channels - possible events are CONNECT, READ, WRITE
 	 */
 	public void loop() throws IOException {
@@ -89,15 +87,16 @@ public class NioClient {
 				selectedKeys.remove();
 
 				// process the event
-				if (key.isValid() && key.isAcceptable())   // accept event
+				if (key.isValid() && key.isAcceptable()) // accept event
 					handleAccept(key);
-				if (key.isValid() && key.isReadable())     // read event
+				if (key.isValid() && key.isReadable()) // read event
 					handleRead(key);
-				if (key.isValid() && key.isWritable())     // write event
+				if (key.isValid() && key.isWritable()) // write event
 					handleWrite(key);
-				if (key.isValid() && key.isConnectable())  // connect event
+				if (key.isValid() && key.isConnectable()) // connect event
 					handleConnect(key);
 			}
+			
 		}
 	}
 
@@ -120,6 +119,8 @@ public class NioClient {
 		assert (sc == key.channel());
 
 		sc.finishConnect();
+		Automata automata = new Automata(sc);
+		key.attach(automata);
 		skey.interestOps(SelectionKey.OP_READ);
 
 		// once connected, send a message to the server
@@ -133,53 +134,40 @@ public class NioClient {
 	 * @param the key of the channel on which the incoming data waits to be received
 	 */
 	private void handleRead(SelectionKey key) throws IOException {
-		assert (this.skey == key);
-		assert (sc == key.channel());
-
-		// Let's read the message
-		inBuffer = ByteBuffer.allocate(INBUF_SZ);
-		int n = sc.read(inBuffer);
-		if (n == -1) {
-			key.cancel();  // communication with server is broken
-			sc.close(); 
-			return;
-		}
-
-		byte[] data = new byte[inBuffer.position()];
-		inBuffer.rewind();
-		inBuffer.get(data);
-
-		// Let's make sure we read the message we sent to the server
-		byte[] md5 = md5(data);
-		if (!md5check(digest, md5)) {
-			System.out.println("Checksum Error!");
-			return;
-		}
-
-		// Let's print the received message, assuming it is a UTF-8 string
-		// since it is the format of the first message sent to the server.
-		String msg = new String(data, Charset.forName("UTF-8"));
-		System.out.println("NioClient received msg["+nloops+"]: " + msg);
-
-		// send back the received message
-		send(data, 0, data.length);
 		
-		if (nloops++ > 500)
-			System.exit(0);
+		Automata automata = (Automata) key.attachment();
+		byte[] data = automata.handleRead(key);
+
+		if (data != null) {
+
+			// Let's make sure we read the message we sent to the server
+			byte[] md5 = md5(data);
+			if (!md5check(digest, md5)) {
+				System.out.println("Checksum Error!");
+				return;
+			}
+
+			// Let's print the received message, assuming it is a UTF-8 string
+			// since it is the format of the first message sent to the server.
+			String msg = new String(data, Charset.forName("UTF-8"));
+			System.out.println("NioClient received msg[" + nloops + "]: " + msg);
+
+			// send back the received message
+			send(data, 0, data.length);
+
+			if (nloops++ > 500)
+				System.exit(0);
+		}
 	}
 
 	/**
-	 * Handle data to write
-	 * assume the data to write is in outBuffer
+	 * Handle data to write assume the data to write is in outBuffer
+	 * 
 	 * @param the key of the channel on which data can be sent
 	 */
 	private void handleWrite(SelectionKey key) throws IOException {
-		assert (this.skey == key);
-		assert (sc == key.channel());
-		// write the output buffer to the socket channel
-		sc.write(outBuffer);
-		// remove the write interest & set READ interest
-		key.interestOps(SelectionKey.OP_READ);
+		Automata automata = (Automata) key.attachment();
+		automata.handleWrite(key);
 	}
 
 	/**
@@ -187,15 +175,14 @@ public class NioClient {
 	 * 
 	 * @param data: the byte array that should be sent
 	 */
-	public void send(byte[] data, int offset, int count) {
-		// this is not optimized, we should try to reuse the same ByteBuffer
-		outBuffer = ByteBuffer.wrap(data, offset, count);
-
-		// register a WRITE interest
-		skey.interestOps(SelectionKey.OP_WRITE);
-	}
-
-
+	public void send(byte[] data, int offset, int count) throws IOException {
+        ByteBuffer bb = ByteBuffer.allocate(4 + data.length);
+        bb.putInt(data.length); 
+        bb.put(data);           
+        bb.flip();              
+        
+        sc.write(bb);
+    }
 
 	public static void main(String args[]) throws IOException {
 		int serverPort = NioServer.DEFAULT_SERVER_PORT;

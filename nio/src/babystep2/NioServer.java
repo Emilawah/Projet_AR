@@ -100,17 +100,19 @@ public class NioServer {
 	 * @param the key of the channel on which a connection is requested
 	 */
 	private void handleAccept(SelectionKey key) throws IOException {
-		assert (this.skey == key);
-		assert (ssc == key.channel());
-		SocketChannel sc;
 
+		SocketChannel sc;
+		
 		// do the actual accept on the server-socket channel
 		// get a client channel as result
 		sc = ssc.accept();
 		sc.configureBlocking(false);
+		
+		Automata automata = new Automata(sc);
 
 		// register a READ interest on sc to receive the message sent by the client
-		sc.register(selector, SelectionKey.OP_READ);
+		sc.register(selector, SelectionKey.OP_READ, automata);
+		System.out.println("NioServer : New connection");
 	}
 
 	/**
@@ -129,30 +131,21 @@ public class NioServer {
 	 * @param the key of the channel on which the incoming data waits to be received
 	 */
 	private void handleRead(SelectionKey key) throws IOException {
-		assert (skey != key);
-		assert (ssc != key.channel());
-
-		// get the socket channel on which the incoming data waits to be received
-		SocketChannel sc = (SocketChannel) key.channel();
-
-		inBuffer = ByteBuffer.allocate(INBUFFER_SZ);
-		int n = sc.read(inBuffer);
-		if (n == -1) {
-			key.cancel();
-			sc.close(); 
-			return;
-		}
-
-		// process the received data
-		byte[] data = new byte[inBuffer.position()];
-		inBuffer.rewind();
-		inBuffer.get(data,0,data.length);
-
-		String msg = new String(data,Charset.forName("UTF-8"));
-		System.out.println("NioServer received: " + msg);
-
-		// echo back the same message to the client
-		send(sc, data, 0, data.length);		
+		Automata automata = (Automata) key.attachment();
+        
+        try {
+            byte[] data = automata.handleRead(key);
+            
+            if (data != null) {
+                String msg = new String(data, Charset.forName("UTF-8"));
+                System.out.println("NioServer received complete msg: " + msg);
+                automata.send(key, data);
+            }
+        } catch (IOException e) {
+            System.err.println("Connection closed by client");
+            key.cancel();
+            key.channel().close();
+        }	
 	}
 
 	/**
@@ -161,16 +154,8 @@ public class NioServer {
 	 * @param the key of the channel on which data can be sent
 	 */
 	private void handleWrite(SelectionKey key) throws IOException {
-		assert (skey != key);
-		assert (ssc != key.channel());
-
-		// get the socket channel for the client to whom we
-		// need to send something
-		SocketChannel sc = (SocketChannel) key.channel();
-		sc.write(outBuffer);
-		
-		// remove the write interest & set READ interest
-		key.interestOps(SelectionKey.OP_READ);
+		Automata automata = (Automata) key.attachment();
+	    automata.handleWrite(key);
 	}
 
 	/**

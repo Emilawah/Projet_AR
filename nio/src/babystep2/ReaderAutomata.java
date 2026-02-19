@@ -20,6 +20,8 @@ public class ReaderAutomata {
 
 			// on alloue le buffer à 4 octets pour lire la taille du message
 			sc.read(bb);
+			System.out.println("RA : Reading length ("+bb.position() + "/4 bytes)");
+
 			if (bb.hasRemaining()) {
 				return null;
 			}
@@ -29,6 +31,7 @@ public class ReaderAutomata {
 			// allocate a buffer to read the msg
 			int length = bb.getInt();
 			bb = ByteBuffer.allocate(length);
+			System.out.println("RA : Length received : " + length);
 			state = State.READING_MSG;
 
 		}
