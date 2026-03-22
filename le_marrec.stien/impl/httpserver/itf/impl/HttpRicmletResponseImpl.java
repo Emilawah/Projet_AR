@@ -3,38 +3,13 @@ package httpserver.itf.impl;
 import java.io.IOException;
 import java.io.PrintStream;
 
+import httpserver.itf.HttpRequest;
 import httpserver.itf.HttpRicmletResponse;
 
-public class HttpRicmletResponseImpl implements HttpRicmletResponse {
+public class HttpRicmletResponseImpl extends HttpResponseImpl implements HttpRicmletResponse {
 
-	@Override
-	public void setReplyOk() throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setReplyError(int codeRet, String msg) throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setContentLength(int length) throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setContentType(String type) throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public PrintStream beginBody() throws IOException {
-		// TODO Auto-generated method stub
-		return null;
+	protected HttpRicmletResponseImpl(HttpServer hs, HttpRequest req, PrintStream ps) {
+		super(hs, req, ps);
 	}
 
 	@Override
@@ -42,5 +17,7 @@ public class HttpRicmletResponseImpl implements HttpRicmletResponse {
 		// TODO Auto-generated method stub
 		
 	}
+
+
 
 }
