@@ -37,6 +37,9 @@ public class HttpStaticRequest extends HttpRequest {
 			resp.setReplyOk();
 			resp.setContentLength((int) downloadFile.length());
 			
+			String type = HttpRequest.getContentType(downloadFile.getName());
+			resp.setContentType(type);
+			
 			PrintStream ps = resp.beginBody();
 			
 			FileInputStream fis = new FileInputStream(downloadFile);
@@ -49,7 +52,7 @@ public class HttpStaticRequest extends HttpRequest {
 			
 			ps.flush();
 			fis.close();
-		
+		    
 		} else {
 			resp.setReplyError(404, "File not found");
 		}

@@ -6,6 +6,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="NIO-ETD-GIVEN"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
