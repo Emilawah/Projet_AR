@@ -18,7 +18,6 @@ public class HttpRicmletRequestImpl extends HttpRicmletRequest {
 	public HttpRicmletRequestImpl(HttpServer hs, String method, String ressname, BufferedReader br) throws IOException {
 		super(hs, method, ressname, br);
 		parseURL();
-		
 	}
 
 	@Override
@@ -28,6 +27,10 @@ public class HttpRicmletRequestImpl extends HttpRicmletRequest {
 
 	@Override
 	public String getArg(String name) {
+		String args = parserArgs.get(name);
+		if(args == null) {
+			return "";
+		}
 		return parserArgs.get(name);
 	}
 
@@ -45,7 +48,7 @@ public class HttpRicmletRequestImpl extends HttpRicmletRequest {
 
 			m_ricmlet.doGet(this, m_ricmletResp);
 		} catch (Exception e) {
-			resp.setReplyError(404, "Ricmlet not found" + classname);
+			resp.setReplyError(404, "Ricmlet not found");
 		}
 
 	}
