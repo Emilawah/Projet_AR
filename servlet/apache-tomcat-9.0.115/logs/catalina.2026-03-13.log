@@ -1,0 +1,274 @@
+13-Mar-2026 10:09:14.898 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom version serveur :              Apache Tomcat/9.0.115
+13-Mar-2026 10:09:14.901 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé :                  Jan 21 2026 08:17:26 UTC
+13-Mar-2026 10:09:14.901 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur :               9.0.115.0
+13-Mar-2026 10:09:14.901 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS :                      Linux
+13-Mar-2026 10:09:14.901 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version OS :                       6.14.0-37-generic
+13-Mar-2026 10:09:14.901 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture :                     amd64
+13-Mar-2026 10:09:14.901 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home :                        /usr/lib/jvm/java-21-openjdk-amd64
+13-Mar-2026 10:09:14.901 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version JVM :                      21.0.10+7-Ubuntu-124.04
+13-Mar-2026 10:09:14.901 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM :            Ubuntu
+13-Mar-2026 10:09:14.901 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE :                    /home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115
+13-Mar-2026 10:09:14.901 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME :                    /home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115
+13-Mar-2026 10:09:14.907 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang=ALL-UNNAMED
+13-Mar-2026 10:09:14.907 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang.invoke=ALL-UNNAMED
+13-Mar-2026 10:09:14.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+13-Mar-2026 10:09:14.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.io=ALL-UNNAMED
+13-Mar-2026 10:09:14.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.util=ALL-UNNAMED
+13-Mar-2026 10:09:14.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+13-Mar-2026 10:09:14.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+13-Mar-2026 10:09:14.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.config.file=/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/conf/logging.properties
+13-Mar-2026 10:09:14.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+13-Mar-2026 10:09:14.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djdk.tls.ephemeralDHKeySize=2048
+13-Mar-2026 10:09:14.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+13-Mar-2026 10:09:14.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dsun.io.useCanonCaches=false
+13-Mar-2026 10:09:14.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+13-Mar-2026 10:09:14.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dignore.endorsed.dirs=
+13-Mar-2026 10:09:14.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.base=/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115
+13-Mar-2026 10:09:14.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.home=/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115
+13-Mar-2026 10:09:14.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.io.tmpdir=/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/temp
+13-Mar-2026 10:09:14.910 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path : [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+13-Mar-2026 10:09:15.116 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+13-Mar-2026 10:09:15.134 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [370] millisecondes
+13-Mar-2026 10:09:15.165 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+13-Mar-2026 10:09:15.165 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets : [Apache Tomcat/9.0.115]
+13-Mar-2026 10:09:15.169 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/examples]
+13-Mar-2026 10:09:15.485 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/examples] de l'application web s'est terminé en [313] ms
+13-Mar-2026 10:09:15.485 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/manager]
+13-Mar-2026 10:09:15.501 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/manager] de l'application web s'est terminé en [16] ms
+13-Mar-2026 10:09:15.501 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/docs]
+13-Mar-2026 10:09:15.512 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/docs] de l'application web s'est terminé en [11] ms
+13-Mar-2026 10:09:15.512 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/host-manager]
+13-Mar-2026 10:09:15.524 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/host-manager] de l'application web s'est terminé en [12] ms
+13-Mar-2026 10:09:15.524 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/ROOT]
+13-Mar-2026 10:09:15.534 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/ROOT] de l'application web s'est terminé en [9] ms
+13-Mar-2026 10:09:15.536 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+13-Mar-2026 10:09:15.542 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [406] millisecondes
+13-Mar-2026 10:12:48.744 INFOS [main] org.apache.catalina.core.StandardServer.await Une commande d'arrêt valide a été reçue sur le port d'arrêt, arrêt de l'instance du serveur
+13-Mar-2026 10:12:48.745 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+13-Mar-2026 10:12:48.747 INFOS [main] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+13-Mar-2026 10:12:48.764 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+13-Mar-2026 10:12:48.769 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+13-Mar-2026 10:13:09.848 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom version serveur :              Apache Tomcat/9.0.115
+13-Mar-2026 10:13:09.851 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé :                  Jan 21 2026 08:17:26 UTC
+13-Mar-2026 10:13:09.851 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur :               9.0.115.0
+13-Mar-2026 10:13:09.851 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS :                      Linux
+13-Mar-2026 10:13:09.851 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version OS :                       6.14.0-37-generic
+13-Mar-2026 10:13:09.851 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture :                     amd64
+13-Mar-2026 10:13:09.851 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home :                        /usr/lib/jvm/java-21-openjdk-amd64
+13-Mar-2026 10:13:09.852 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version JVM :                      21.0.10+7-Ubuntu-124.04
+13-Mar-2026 10:13:09.852 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM :            Ubuntu
+13-Mar-2026 10:13:09.852 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE :                    /home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115
+13-Mar-2026 10:13:09.852 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME :                    /home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115
+13-Mar-2026 10:13:09.856 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang=ALL-UNNAMED
+13-Mar-2026 10:13:09.856 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang.invoke=ALL-UNNAMED
+13-Mar-2026 10:13:09.856 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+13-Mar-2026 10:13:09.856 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.io=ALL-UNNAMED
+13-Mar-2026 10:13:09.856 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.util=ALL-UNNAMED
+13-Mar-2026 10:13:09.856 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+13-Mar-2026 10:13:09.856 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+13-Mar-2026 10:13:09.856 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.config.file=/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/conf/logging.properties
+13-Mar-2026 10:13:09.856 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+13-Mar-2026 10:13:09.856 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djdk.tls.ephemeralDHKeySize=2048
+13-Mar-2026 10:13:09.857 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+13-Mar-2026 10:13:09.857 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dsun.io.useCanonCaches=false
+13-Mar-2026 10:13:09.857 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+13-Mar-2026 10:13:09.857 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dignore.endorsed.dirs=
+13-Mar-2026 10:13:09.857 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.base=/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115
+13-Mar-2026 10:13:09.857 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.home=/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115
+13-Mar-2026 10:13:09.857 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.io.tmpdir=/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/temp
+13-Mar-2026 10:13:09.858 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path : [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+13-Mar-2026 10:13:10.053 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+13-Mar-2026 10:13:10.069 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [332] millisecondes
+13-Mar-2026 10:13:10.094 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+13-Mar-2026 10:13:10.095 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets : [Apache Tomcat/9.0.115]
+13-Mar-2026 10:13:10.099 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/examples]
+13-Mar-2026 10:13:10.385 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/examples] de l'application web s'est terminé en [284] ms
+13-Mar-2026 10:13:10.385 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/manager]
+13-Mar-2026 10:13:10.402 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/manager] de l'application web s'est terminé en [17] ms
+13-Mar-2026 10:13:10.402 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/docs]
+13-Mar-2026 10:13:10.414 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/docs] de l'application web s'est terminé en [12] ms
+13-Mar-2026 10:13:10.414 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/host-manager]
+13-Mar-2026 10:13:10.426 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/host-manager] de l'application web s'est terminé en [12] ms
+13-Mar-2026 10:13:10.426 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/ROOT]
+13-Mar-2026 10:13:10.437 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/ROOT] de l'application web s'est terminé en [10] ms
+13-Mar-2026 10:13:10.440 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+13-Mar-2026 10:13:10.446 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [375] millisecondes
+13-Mar-2026 10:48:20.778 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.reload Rechargement du contexte [/examples]
+13-Mar-2026 10:48:20.780 INFOS [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/examples] a démarré
+13-Mar-2026 10:48:20.920 GRAVE [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Exception lors du démarrage du contexte [/examples]
+	org.apache.catalina.LifecycleException: Echec de démarrage du composant [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/examples]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:404)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3258)
+		at org.apache.catalina.startup.HostConfig.reload(HostConfig.java:1411)
+		at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1386)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1612)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:305)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:971)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1170)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1174)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1152)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+	Caused by: java.lang.IllegalArgumentException: L'association de servlet (servlet mapping) indique un nom de servlet inconnu [MyHelloWorldExample]
+		at org.apache.catalina.core.StandardContext.addServletMappingDecoded(StandardContext.java:2825)
+		at org.apache.catalina.Context.addServletMappingDecoded(Context.java:855)
+		at org.apache.catalina.startup.ContextConfig.configureContext(ContextConfig.java:1509)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1302)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:971)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:288)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4395)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 17 more
+13-Mar-2026 10:48:20.922 INFOS [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+13-Mar-2026 11:13:09.710 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom version serveur :              Apache Tomcat/9.0.115
+13-Mar-2026 11:13:09.714 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé :                  Jan 21 2026 08:17:26 UTC
+13-Mar-2026 11:13:09.714 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur :               9.0.115.0
+13-Mar-2026 11:13:09.714 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS :                      Linux
+13-Mar-2026 11:13:09.714 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version OS :                       6.14.0-37-generic
+13-Mar-2026 11:13:09.714 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture :                     amd64
+13-Mar-2026 11:13:09.714 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home :                        /usr/lib/jvm/java-21-openjdk-amd64
+13-Mar-2026 11:13:09.714 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version JVM :                      21.0.10+7-Ubuntu-124.04
+13-Mar-2026 11:13:09.715 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM :            Ubuntu
+13-Mar-2026 11:13:09.715 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE :                    /home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115
+13-Mar-2026 11:13:09.715 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME :                    /home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115
+13-Mar-2026 11:13:09.723 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang=ALL-UNNAMED
+13-Mar-2026 11:13:09.724 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang.invoke=ALL-UNNAMED
+13-Mar-2026 11:13:09.724 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+13-Mar-2026 11:13:09.724 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.io=ALL-UNNAMED
+13-Mar-2026 11:13:09.724 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.util=ALL-UNNAMED
+13-Mar-2026 11:13:09.724 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+13-Mar-2026 11:13:09.724 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+13-Mar-2026 11:13:09.724 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.config.file=/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/conf/logging.properties
+13-Mar-2026 11:13:09.724 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+13-Mar-2026 11:13:09.724 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djdk.tls.ephemeralDHKeySize=2048
+13-Mar-2026 11:13:09.724 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+13-Mar-2026 11:13:09.724 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dsun.io.useCanonCaches=false
+13-Mar-2026 11:13:09.724 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+13-Mar-2026 11:13:09.724 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dignore.endorsed.dirs=
+13-Mar-2026 11:13:09.724 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.base=/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115
+13-Mar-2026 11:13:09.724 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.home=/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115
+13-Mar-2026 11:13:09.725 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.io.tmpdir=/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/temp
+13-Mar-2026 11:13:09.726 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path : [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+13-Mar-2026 11:13:09.950 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+13-Mar-2026 11:13:09.961 GRAVE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Echec d'initialisation du composant [Connector["http-nio-8080"]]
+	org.apache.catalina.LifecycleException: L'initialisation du gestionnaire de protocole a échoué
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1084)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:122)
+		at org.apache.catalina.core.StandardService.initInternal(StandardService.java:520)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:122)
+		at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:984)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:122)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:687)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:710)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:299)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:472)
+	Caused by: java.net.BindException: Adresse déjà utilisée
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:577)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:344)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:301)
+		at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:296)
+		at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:251)
+		at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1497)
+		at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1510)
+		at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:667)
+		at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:80)
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1082)
+		... 11 more
+13-Mar-2026 11:13:09.962 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [401] millisecondes
+13-Mar-2026 11:13:09.990 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+13-Mar-2026 11:13:09.990 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets : [Apache Tomcat/9.0.115]
+13-Mar-2026 11:13:09.994 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/examples]
+13-Mar-2026 11:13:10.172 GRAVE [main] org.apache.catalina.startup.HostConfig.deployDirectory Erreur lors du déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/examples] de l'application web
+	java.lang.IllegalStateException: Erreur lors du démarrage du conteneur fils
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:600)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:569)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:608)
+		at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1171)
+		at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1880)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1082)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:467)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:336)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:774)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:726)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1201)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1191)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:747)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:209)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:872)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:736)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.apache.catalina.LifecycleException: Echec de démarrage du composant [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/examples]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:404)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:597)
+		... 35 more
+	Caused by: java.lang.IllegalArgumentException: L'association de servlet (servlet mapping) indique un nom de servlet inconnu [MyHelloWorldExample]
+		at org.apache.catalina.core.StandardContext.addServletMappingDecoded(StandardContext.java:2825)
+		at org.apache.catalina.Context.addServletMappingDecoded(Context.java:855)
+		at org.apache.catalina.startup.ContextConfig.configureContext(ContextConfig.java:1509)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1302)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:971)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:288)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4395)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 36 more
+13-Mar-2026 11:13:10.177 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/examples] de l'application web s'est terminé en [179] ms
+13-Mar-2026 11:13:10.177 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/manager]
+13-Mar-2026 11:13:10.285 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/manager] de l'application web s'est terminé en [108] ms
+13-Mar-2026 11:13:10.286 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/docs]
+13-Mar-2026 11:13:10.298 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/docs] de l'application web s'est terminé en [12] ms
+13-Mar-2026 11:13:10.298 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/host-manager]
+13-Mar-2026 11:13:10.310 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/host-manager] de l'application web s'est terminé en [11] ms
+13-Mar-2026 11:13:10.310 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/ROOT]
+13-Mar-2026 11:13:10.319 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/emiliostien/Documents/POLYTECH/INFO4/S8/AR/servlet/apache-tomcat-9.0.115/webapps/ROOT] de l'application web s'est terminé en [9] ms
+13-Mar-2026 11:13:10.322 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [359] millisecondes
+13-Mar-2026 11:13:10.326 GRAVE [main] org.apache.catalina.core.StandardServer.await Impossible de créer le sokcet d'arrêt du serveur à l'adresse [localhost] et au port [8005] (port de base [8005] et offset [0])
+	java.net.BindException: Adresse déjà utilisée
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:577)
+		at java.base/sun.nio.ch.Net.bind(Net.java:566)
+		at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+		at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+		at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+		at org.apache.catalina.core.StandardServer.await(StandardServer.java:535)
+		at org.apache.catalina.startup.Catalina.await(Catalina.java:826)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:774)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+13-Mar-2026 11:13:10.326 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+13-Mar-2026 11:13:10.326 INFOS [main] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+13-Mar-2026 11:13:10.338 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+13-Mar-2026 11:13:10.339 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
