@@ -53,14 +53,14 @@ public class HttpServer {
 			throws InstantiationException, IllegalAccessException, ClassNotFoundException, MalformedURLException,
 			IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 
-		//if this ricmlet is already associated with the classname given
+		// if this ricmlet is already associated with the classname given
 		HttpRicmlet instance = m_ricmlets.get(clsname);
 		// create a new one if it don't exist
 		if (instance == null) {
 			Class<?> c = Class.forName(clsname);
 			instance = (HttpRicmlet) c.getDeclaredConstructor().newInstance();
 			m_ricmlets.put(clsname, instance);
-			
+
 		}
 		return instance;
 
@@ -78,10 +78,10 @@ public class HttpServer {
 		String method = parseline.nextToken().toUpperCase();
 		String ressname = parseline.nextToken();
 		if (method.equals("GET")) {
-			if(ressname.startsWith("/ricmlets")) {
+			if (ressname.startsWith("/ricmlets")) {
 				request = new HttpRicmletRequestImpl(this, method, ressname, br);
-			}else {
-				
+			} else {
+
 				request = new HttpStaticRequest(this, method, ressname);
 			}
 		} else
@@ -93,7 +93,7 @@ public class HttpServer {
 	 * Returns an HttpResponse object associated to the given HttpRequest object
 	 */
 	public HttpResponse getResponse(HttpRequest req, PrintStream ps) {
-		if(req instanceof HttpRicmletRequest) {
+		if (req instanceof HttpRicmletRequest) {
 			return new HttpRicmletResponseImpl(this, req, ps);
 		}
 		return new HttpResponseImpl(this, req, ps);
@@ -125,5 +125,4 @@ public class HttpServer {
 			hs.loop();
 		}
 	}
-
 }

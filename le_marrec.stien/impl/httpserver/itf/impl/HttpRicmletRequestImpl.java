@@ -2,6 +2,7 @@ package httpserver.itf.impl;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 
 import httpserver.itf.HttpResponse;
@@ -14,10 +15,12 @@ public class HttpRicmletRequestImpl extends HttpRicmletRequest {
 
 	private String classname;
 	private HashMap<String, String> parserArgs;
+	private HashMap<String,String> m_cookies;
 
 	public HttpRicmletRequestImpl(HttpServer hs, String method, String ressname, BufferedReader br) throws IOException {
 		super(hs, method, ressname, br);
 		parseURL();
+		parseHeaders(br);
 	}
 
 	@Override
@@ -36,20 +39,17 @@ public class HttpRicmletRequestImpl extends HttpRicmletRequest {
 
 	@Override
 	public String getCookie(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		return m_cookies.get(name);
 	}
 
 	@Override
-	public void process(HttpResponse resp) throws Exception {
-		try {
+	public void process(HttpResponse resp) throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException  {
+	
 			HttpRicmlet m_ricmlet = m_hs.getInstance(classname);
 			HttpRicmletResponse m_ricmletResp = (HttpRicmletResponse) resp;
 
 			m_ricmlet.doGet(this, m_ricmletResp);
-		} catch (Exception e) {
-			resp.setReplyError(404, "Ricmlet not found");
-		}
+			
 
 	}
 	
@@ -88,6 +88,24 @@ public class HttpRicmletRequestImpl extends HttpRicmletRequest {
 					parserArgs.put(key, value);
 				} else {
 					parserArgs.put(pair, "");
+				}
+			}
+		}
+	}
+	
+	public void parseHeaders(BufferedReader br) throws IOException {
+		this.m_cookies = new HashMap<>();
+		String line;
+		while((line = br.readLine()) != null && !line.isEmpty()) {
+			
+			if(line.startsWith("Cookie:")) {
+				String cookiePart = line.substring(7).trim();
+				String[] pairs = cookiePart.split(";");
+				for(String pair : pairs) {
+					String[] kv = pair.split("=");
+					if(kv.length == 2) {
+						m_cookies.put(kv[0].trim(), kv[1].trim());
+					}
 				}
 			}
 		}
