@@ -10,11 +10,13 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.StringTokenizer;
+import java.util.UUID;
 
 import httpserver.itf.HttpRequest;
 import httpserver.itf.HttpResponse;
 import httpserver.itf.HttpRicmlet;
 import httpserver.itf.HttpRicmletRequest;
+import httpserver.itf.HttpSession;
 
 /**
  * Basic HTTP Server Implementation
@@ -30,6 +32,7 @@ public class HttpServer {
 	private File m_folder; // default folder for accessing static resources (files)
 	private ServerSocket m_ssoc;
 	private HashMap<String, HttpRicmlet> m_ricmlets = new HashMap<>();
+	private HashMap<String,HttpSession> m_sessions = new HashMap<>();
 
 	protected HttpServer(int port, String folderName) {
 		m_port = port;
@@ -99,6 +102,17 @@ public class HttpServer {
 		return new HttpResponseImpl(this, req, ps);
 	}
 
+	
+	public HttpSession getHttpSession(String id) {
+		return m_sessions.get(id);
+	}
+	
+	
+	public void setHttpSession(HttpSession session) {
+	    m_sessions.put(session.getId(), session);
+	}
+	
+	
 	/*
 	 * Server main loop
 	 */

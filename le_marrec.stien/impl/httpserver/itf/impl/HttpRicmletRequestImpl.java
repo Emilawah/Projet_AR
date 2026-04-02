@@ -15,7 +15,8 @@ public class HttpRicmletRequestImpl extends HttpRicmletRequest {
 
 	private String classname;
 	private HashMap<String, String> parserArgs;
-	private HashMap<String,String> m_cookies;
+	private HashMap<String, String> m_cookies;
+	private HttpRicmletResponse m_resp;
 
 	public HttpRicmletRequestImpl(HttpServer hs, String method, String ressname, BufferedReader br) throws IOException {
 		super(hs, method, ressname, br);
@@ -24,14 +25,9 @@ public class HttpRicmletRequestImpl extends HttpRicmletRequest {
 	}
 
 	@Override
-	public HttpSession getSession() {
-		return null;
-	}
-
-	@Override
 	public String getArg(String name) {
 		String args = parserArgs.get(name);
-		if(args == null) {
+		if (args == null) {
 			return "";
 		}
 		return parserArgs.get(name);
@@ -43,19 +39,46 @@ public class HttpRicmletRequestImpl extends HttpRicmletRequest {
 	}
 
 	@Override
-	public void process(HttpResponse resp) throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException  {
-	
-			HttpRicmlet m_ricmlet = m_hs.getInstance(classname);
-			HttpRicmletResponse m_ricmletResp = (HttpRicmletResponse) resp;
+	public void process(HttpResponse resp)
+			throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException,
+			IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+		this.m_resp = (HttpRicmletResponse) resp;
+		HttpRicmlet m_ricmlet = m_hs.getInstance(classname);
 
-			m_ricmlet.doGet(this, m_ricmletResp);
-			
+		m_ricmlet.doGet(this, m_resp);
 
 	}
-	
+
+	@Override
+	public HttpSession getSession() {
+
+		String sessionId = getCookie("session-id");
+		HttpSession session = null;
+
+		// si elle existe deja on la recupere 
+		if (sessionId != null) {
+			session = m_hs.getHttpSession(sessionId);
+		}
+
+		// on cree la session si elle existe pas deja
+		if (session == null) {
+			String newSession = java.util.UUID.randomUUID().toString();
+			session = new HttpSessionImpl(newSession);
+
+			m_hs.setHttpSession(session);
+
+			if (m_resp != null) {
+				m_resp.setCookie("session-id", newSession);
+			}
+		}
+
+		return session;
+
+	}
+
 	public void parseURL() {
 		this.parserArgs = new HashMap<>();
-		String path; 
+		String path;
 		String queryString = null;
 
 		if (m_ressname.indexOf('?') != -1) {
@@ -72,10 +95,10 @@ public class HttpRicmletRequestImpl extends HttpRicmletRequest {
 		}
 
 		String tempPath = path;
-		if(tempPath.startsWith("/")) {
+		if (tempPath.startsWith("/")) {
 			tempPath = tempPath.substring(1);
 		}
-		
+
 		this.classname = tempPath.replace('/', '.');
 
 		if (queryString != null && !queryString.isEmpty()) {
@@ -92,18 +115,18 @@ public class HttpRicmletRequestImpl extends HttpRicmletRequest {
 			}
 		}
 	}
-	
+
 	public void parseHeaders(BufferedReader br) throws IOException {
 		this.m_cookies = new HashMap<>();
 		String line;
-		while((line = br.readLine()) != null && !line.isEmpty()) {
-			
-			if(line.startsWith("Cookie:")) {
+		while ((line = br.readLine()) != null && !line.isEmpty()) {
+
+			if (line.startsWith("Cookie:")) {
 				String cookiePart = line.substring(7).trim();
 				String[] pairs = cookiePart.split(";");
-				for(String pair : pairs) {
+				for (String pair : pairs) {
 					String[] kv = pair.split("=");
-					if(kv.length == 2) {
+					if (kv.length == 2) {
 						m_cookies.put(kv[0].trim(), kv[1].trim());
 					}
 				}
