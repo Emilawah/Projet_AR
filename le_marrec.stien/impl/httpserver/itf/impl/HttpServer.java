@@ -33,7 +33,9 @@ public class HttpServer {
 	private ServerSocket m_ssoc;
 	private HashMap<String, HttpRicmlet> m_ricmlets = new HashMap<>();
 	private HashMap<String,HttpSession> m_sessions = new HashMap<>();
-
+	private static final long SESSION_TIMEOUT = 15000;
+	
+	
 	protected HttpServer(int port, String folderName) {
 		m_port = port;
 		if (!folderName.endsWith(File.separator))
@@ -46,6 +48,7 @@ public class HttpServer {
 			System.out.println("HttpServer Exception:" + e);
 			System.exit(1);
 		}
+		startSessionCleaner();
 	}
 
 	public File getFolder() {
@@ -112,6 +115,23 @@ public class HttpServer {
 	    m_sessions.put(session.getId(), session);
 	}
 	
+	
+	private void startSessionCleaner() {
+	    Thread cleaner = new Thread(() -> {
+	        while (true) {
+	            try {
+	                Thread.sleep(5000); // Vérification toutes les minutes
+	                long now = System.currentTimeMillis();
+	                // Suppression des sessions expirées
+	                m_sessions.entrySet().removeIf(entry -> 
+	                    (now - ((HttpSessionImpl)entry.getValue()).getLastAccessedTime()) > SESSION_TIMEOUT
+	                );
+	            } catch (InterruptedException e) { break; }
+	        }
+	    });
+	    cleaner.setDaemon(true); // S'arrête avec le serveur
+	    cleaner.start();
+	}
 	
 	/*
 	 * Server main loop

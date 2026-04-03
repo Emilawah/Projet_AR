@@ -67,9 +67,7 @@ public class HttpRicmletRequestImpl extends HttpRicmletRequest {
 
 			m_hs.setHttpSession(session);
 
-			if (m_resp != null) {
-				m_resp.setCookie("session-id", newSession);
-			}
+			m_resp.setCookie("session-id", newSession);
 		}
 
 		return session;
